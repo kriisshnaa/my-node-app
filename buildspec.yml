@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo Installing dependencies...
+      - npm install
+
+  build:
+    commands:
+      - echo Building the application...
+      - npm run build
+
+  post_build:
+    commands:
+      - echo Build completed.
+      # If you have tests, you can run them here
+      - npm test
+
+artifacts:
+  files:
+    - '**/*'
+  # Define the paths to your build output files if needed
+
+cache:
+  paths:
+    - 'node_modules/**/*'
+
